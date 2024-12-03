@@ -11,13 +11,12 @@ jobs:
         with:
           repository: ${{ github.repository }}.wiki
           ref: master
-          path: .wiki
 
       - run: find .
 
       - run: |
-          curl -L $HREF -o .wiki/bucket_boy.png
-          cat << EOF > .wiki/Home.md
+          curl -L $HREF -o bucket_boy.png
+          cat << EOF > Home.md
           ![bucket_boy](./bucket_boy.png)
           EOF
           git add .
