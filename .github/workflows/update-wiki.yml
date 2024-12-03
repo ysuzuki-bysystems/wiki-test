@@ -24,6 +24,7 @@ jobs:
           curl -sSfL $HREF -o bucket_boy.png
           cat << EOF > Home.md
           ![bucket_boy](./bucket_boy.png)
+          $(date)
           EOF
 
           git add .
