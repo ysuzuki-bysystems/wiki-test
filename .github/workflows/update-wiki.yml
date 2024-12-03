@@ -14,3 +14,14 @@ jobs:
           path: .wiki
 
       - run: find .
+
+      - run: |
+          curl -L $HREF -o .wiki/bucket_boy.png
+          cat << EOF > .wiki/Home.md
+          ![bucket_boy](./bucket_boy.png)
+          EOF
+          git add .
+          git commit -mUpdate
+          git push
+        env:
+          HREF: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_KDuCUJ4SXPSs6ZVz2LFbkWyS4XTccFEfiizRuoUPM9PmR1Ob9P7IJpFG4hb2_wloVK6eMLvN8bwv8ILauUQWacxn7DzeHCvuQudsNZucMUTrzaMdHRzwjBJ5pDVJNTMhwAnDegyKBtAs6wEjFgsc2HY-9q4WoCHVuBzYIQ_Xv1KPBK8ZBHyx9EpGX3PA/s400/bucket_boy.png"
