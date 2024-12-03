@@ -3,6 +3,9 @@ name: Update wiki
 on:
   push:
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -18,7 +21,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          curl -L $HREF -o bucket_boy.png
+          curl -sSfL $HREF -o bucket_boy.png
           cat << EOF > Home.md
           ![bucket_boy](./bucket_boy.png)
           EOF
